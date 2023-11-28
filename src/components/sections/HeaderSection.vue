@@ -1,21 +1,31 @@
 <template>
     <header>
         <div class="header">
-            <p class="header__logo">CREATE<span>X</span></p>
+            <router-link to="/" @click="this.currentPath ='/'" class="header__logo">CREATE<span>X</span></router-link>
             <nav class="header__navbar">
-                <router-link custom to="/about">
+                <router-link :class="{ 'link-style': true, 'header__navbar-link_active': this.currentPath ==='/about' }" 
+                @click="this.currentPath ='/about'"
+                    to="/about">
                     About us
                 </router-link>
-                <router-link custom to="/services">
-                    setvices
+                <router-link :class="{ 'link-style': true, 'header__navbar-link_active': this.currentPath ==='/services' }" 
+                @click="this.currentPath ='/services'"
+                    to="/services">
+                    services
                 </router-link>
-                <router-link custom to="/work">
+                <router-link :class="{ 'link-style': true, 'header__navbar-link_active': this.currentPath ==='/work' }" 
+                @click="this.currentPath ='/work'"
+                    to="/work">
                     Work
                 </router-link>
-                <router-link custom to="/news">
+                <router-link :class="{ 'link-style': true, 'header__navbar-link_active': this.currentPath ==='/news' }" 
+                @click="this.currentPath ='/news'"
+                    to="/news">
                     News
                 </router-link>
-                <router-link custom to="/contacts">
+                <router-link :class="{ 'link-style': true, 'header__navbar-link_active': this.currentPath ==='/contacts' }" 
+                @click="this.currentPath ='/contacts'"
+                    to="/contacts">
                     Contacts
                 </router-link>
             </nav>
@@ -35,21 +45,39 @@
 
 <script>
 export default {
-    name: 'HeaderMain'
+    name: 'HeaderSection',
+    data() {
+        return {
+            currentPath: '/'
+        }
+    },
+    
 }
+
 </script>
 
 <style scoped lang="scss">
+header{
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
 .header {
     max-width: 1230px;
     margin: 20px auto;
     display: flex;
     padding: 13px 0 0;
 
+  
+
     &__logo {
         margin: 0;
         font-size: 30px;
         font-weight: 700;
+        text-decoration: none;
+        color: black;
 
         span {
             margin-left: 2px;
@@ -71,6 +99,10 @@ export default {
             &:hover {
                 color: var(--col-main);
             }
+        }
+
+        &-link_active {
+            color: var(--col-main);
         }
     }
 }
@@ -105,5 +137,4 @@ export default {
 
     }
 
-}
-</style>
+}</style>

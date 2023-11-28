@@ -1,8 +1,7 @@
 <template>
     <section>
         <div class="selected__topper">
-            <h2 class="selected__topper-heading">Browse our selected projects
-                and learn more about our work</h2>
+            <h2 class="selected__topper-heading">{{heading}}</h2>
             <button class="selected__topper-btn selected__topper-btn_left" :disabled="translateValue === 0"
                 @click="moveSlider(-1, 7)" />
             <button class="selected__topper-btn selected__topper-btn_right" :disabled="translateValue === 6"
@@ -13,15 +12,15 @@
                 <ItemEl v-for="(item, index) in massive" :key="index" :item="item" />
             </ul>
         </div>
-       <SectionFooter :text="'Explore all our works'" :btnText="'View portfolio'"/>
+       <SectionFooter :text="'Explore all our works'" :btnText="'View portfolio'" :route="'work'"/>
     </section>
 </template>
 
 <script>
 import { itemList } from '@/utils/constans/itemList';
 import { useSlider } from '@/utils/customHooks/useSlider';
-import ItemEl from './items/ItemEl.vue';
-import SectionFooter from './items/SetionFooter.vue';
+import ItemEl from '../items/ItemEl.vue';
+import SectionFooter from '../items/SetionFooter.vue';
 
 export default {
     name: "SliderItemsSection",
@@ -32,6 +31,7 @@ export default {
             massive, translateValue, moveSlider
         };
     },
+    props:['heading'],
     components: { ItemEl, SectionFooter }
 }
 </script>

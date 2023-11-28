@@ -5,14 +5,14 @@
             <ItemNews v-for="(item, index) in massive" :key="index" :item="item" :shorted="true" />
 
         </ul>
-<SectionFooter :text="'Explore all our news posts'" :btnText="'View all news'"/>
+<SectionFooter :text="'Explore all our news posts'" :btnText="'View all news'" :route="'news'"/>
     </section>
 </template>
 
 <script>
-import ItemNews from './items/ItemNews.vue';
+import ItemNews from '../items/ItemNews.vue';
 import { newsList } from '@/utils/constans/newsList';
-import SectionFooter from './items/SetionFooter.vue'
+import SectionFooter from '../items/SetionFooter.vue'
 export default {
     name: "NewsMain",
     data() {

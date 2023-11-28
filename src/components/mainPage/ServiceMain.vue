@@ -52,12 +52,12 @@
                 <div class="service__el-back service__el-back_colored service__el-back_colored-D"></div>
             </li>
         </ul>
-       <SectionFooter :text="'Learn more about our services'" :btnText="'view services'"/>
+       <SectionFooter :text="'Learn more about our services'" :btnText="'view services'" :route="'services'"/>
     </section>
 </template>
 
 <script>
-import SectionFooter from './items/SetionFooter.vue'
+import SectionFooter from '../items/SetionFooter.vue'
 export default {
     name: 'ServiceMain',
     data() {

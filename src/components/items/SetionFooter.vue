@@ -1,13 +1,13 @@
 <template>
     <div>
         <p>{{ text }}</p>
-        <button class="btn-hover-orange">{{ btnText }}</button>
+        <router-link class="sectionFooter__link btn-hover-orange" :to="`/${route}`" >{{ btnText }}</router-link>
     </div>
 </template>
 <script>
 export default {
     name: 'SectionFooter',
-    props: ['text', 'btnText']
+    props: ['text', 'btnText', 'route']
 }
 </script>
 
@@ -29,13 +29,14 @@ p {
 
 }
 
-button {
+.sectionFooter__link {
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-align: center;
     padding: 20px 40px;
     text-transform: uppercase;
+    text-decoration: none;
 
 
 }

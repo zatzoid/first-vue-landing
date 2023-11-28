@@ -7,7 +7,7 @@
                 <label>Phone <input name="phone" v-model="phoneValue" required type="number" placeholder="phone"></label>
                 <label>Message <input name="message" v-model="messageValue" required type="text"
                         placeholder="message"></label>
-                <button type="submit" class="btn-hover-orange">send</button>
+                <button type="submit" class="btn-hover-orange ask__btn">send</button>
             </form>
         </div>
     </section>
@@ -87,12 +87,14 @@ form {
         }
     }
 
-    button {
+    .ask__btn {
         margin-top: 22px;
         font-size: 14px;
         font-weight: 700;
         line-height: 44px;
         letter-spacing: 0.5px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 </style>

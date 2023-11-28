@@ -22,8 +22,8 @@
                         ipsum
                         sed.
                         Pellentesque nec turpis purus eget pellentesque integer ipsum elementum felis. </p>
-                    <bitton class="slider__el-content-btn">Learn more about us</bitton>
-                    <bitton class="slider__el-content-btn ">submit request</bitton>
+                    <router-link to="/about" class="slider__el-content-btn">Learn more about us</router-link>
+                    <router-link to="/" class="slider__el-content-btn">submit request</router-link>
                 </div>
                 <div class="slider__el-background slider__el-background_first">
                 </div>
@@ -114,6 +114,7 @@ export default {
     position: relative;
     height: 950px;
     overflow: hidden;
+    padding-top: 100px;
 
     &-wrapper {
         height: 100%;
@@ -175,14 +176,15 @@ export default {
                 letter-spacing: 0.5px;
                 text-align: center;
                 background-color: var(--col-main);
-                border: 2px solid var(--col-main);
+                    border: 2px solid var(--col-main);
                 margin-left: 24px;
                 border-radius: 5px;
                 cursor: pointer;
                 transition: all 0.5s;
                 text-transform: uppercase;
-
-
+                text-decoration: none;
+                color: white;
+                
                 &:hover {
                     background-color: white;
                     border: 2px solid white;
@@ -194,6 +196,7 @@ export default {
                     background-color: var(--col-clear);
                     border: 2px solid white;
                     margin-left: 0;
+                    color: white;
 
                     &:hover {
 
