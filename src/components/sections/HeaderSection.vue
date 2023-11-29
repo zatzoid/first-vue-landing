@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="header">
+        <div class="header" id="top">
             <router-link to="/" @click="this.currentPath ='/'" class="header__logo">CREATE<span>X</span></router-link>
             <nav class="header__navbar">
                 <router-link :class="{ 'link-style': true, 'header__navbar-link_active': this.currentPath ==='/about' }" 

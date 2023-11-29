@@ -1,6 +1,7 @@
 <template>
   <HeaderSection />
   <router-view></router-view>
+  <UpBtn/>
   <FooterForm />
   <FooterSection/>
 </template>
@@ -11,16 +12,18 @@ import './utils/fonts/fonts.css'
 import HeaderSection from './components/sections/HeaderSection.vue';
 import FooterForm from './components/sections/FooterForm.vue';
 import FooterSection from './components/sections/FooterSection.vue';
+import UpBtn from './components/UpBtn.vue';
 
 
 
 export default {
   name: 'App',
+ 
   components: {
-
     HeaderSection,
     FooterForm,
-    FooterSection
+    FooterSection,
+    UpBtn
 }
 }
 </script>
