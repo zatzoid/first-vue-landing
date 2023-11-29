@@ -21,9 +21,6 @@ return{
 
 }
     },
-    mounted(){
-console.log(window.location.pathname.split('/'))
-    },
     props: ['headingTxt', 'contentTxt']
 }
 </script>
@@ -45,7 +42,7 @@ section {
 }
 
 nav {
-    margin: 152px 0 40px;
+    margin: 100px 0 40px;
 }
 .heading__nav-link::after{
     content: ' / ';

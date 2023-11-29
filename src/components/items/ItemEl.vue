@@ -4,7 +4,7 @@
         <div>
             <p class="itemEl__heading">{{ item.name }}</p>
             <p class="itemEl__description">{{ item.description }}</p>
-            <button class="btn-hover-white">VIEW PROJECT</button>
+            <router-link :to="`/work/${item.name}`" class="btn-hover-white itemEl__link">VIEW PROJECT</router-link>
         </div>
     </li>
 </template>
@@ -29,9 +29,11 @@ export default {
     height: 440px;
     box-shadow: 4px 6px 8px 0px rgba(0, 0, 0, 0.2);
     transition: all .3s;
+    margin-bottom: 25px;
+    box-sizing: border-box;
 
  &:hover{
-    box-shadow: 7px 16px 21px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 10px 15px 0px rgba(0, 0, 0, 0.2);
  }
 }
 
@@ -47,6 +49,7 @@ div {
     width: 100%;
     text-align: center;
     transition: all .3s;
+    padding-bottom: 24px;
 }
 .itemEl:hover > div{
 transform: translateY(-80px);
@@ -60,7 +63,7 @@ transform: translateY(-80px);
 }
 
 .itemEl__description {
-    margin: 0;
+    margin: 0 0 24px;
     opacity: 0.5;
     font-size: 14px;
     font-weight: 400;
@@ -69,13 +72,14 @@ transform: translateY(-80px);
 
 }
 
-button {
-    padding: 0 32px;
+.itemEl__link {
     font-size: 14px;
     font-weight: 700;
     line-height: 44px;
     letter-spacing: 0.5px;
-    margin: 24px 0;
+    padding: 15px 30px;
+    text-decoration: none;
+    box-sizing: border-box;
 
 }
 </style>

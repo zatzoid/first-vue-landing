@@ -36,7 +36,8 @@ export default {
 <style scoped lang="scss">
 section {
     max-width: var(--max-width);
-    margin: 180px auto 271px;
+    margin:  auto ;
+    padding: 180px 0 270px;
 }
 
 

@@ -2,7 +2,7 @@
     <li :class="{ 'itemNews': true, 'itemNews_shorted': shorted }">
         <img :src="image" alt="asd">
         <div :class="{ 'itemNews__content': true, 'itemNews__content_shorted': shorted }">
-            <h4 class="itemNews__heading">{{ item.heading }}</h4>
+            <router-link :to="`/news/post${item.newsIndex}`" class="itemNews__heading"> <p class="itemNews__heading-txt">{{ item.heading }}</p></router-link>
             <div class="itemNews__info">
                 <p class="itemNews__info-data">{{ item.type }}</p>
                 <p class="itemNews__info-data">{{ item.date }}</p>
@@ -40,7 +40,7 @@ export default {
         &:first-of-type {
             grid-row: 1 / span 2;
         }
-       
+
 
     }
 
@@ -49,9 +49,23 @@ export default {
         font-size: 20px;
         font-weight: 700;
         line-height: 30px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        text-decoration: none;
+        color: black;
+      
+        &-txt{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        &:hover {
+            color: var(--col-main);
+        }
+
+        &:active {
+            color: var(--col-main);
+            opacity: 0.7;
+        }
 
     }
 
@@ -85,13 +99,14 @@ export default {
         padding: 24px;
         box-sizing: border-box;
         width: 100%;
-        &_shorted{
+
+        &_shorted {
             transition: all .5s;
-           transform: translateY(50%);
+            transform: translateY(50%);
         }
     }
 }
-.itemNews:hover > .itemNews__content_shorted{
+
+.itemNews:hover>.itemNews__content_shorted {
     transform: translateY(0);
-}
-</style>
+}</style>
