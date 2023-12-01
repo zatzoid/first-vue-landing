@@ -4,8 +4,12 @@ module.exports = defineConfig({
   css:{
     loaderOptions:{
       sass:{
-       /*  prependData: `@import "@/styles/main.scss";` */
       }
     }
   }
 })
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/first-vue-landing/'
+    : '/'
+}
