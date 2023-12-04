@@ -101,6 +101,9 @@ h2 {
 
 .heading__nav-link:last-of-type {
     opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+
 }
 
 .heading__nav-link:last-of-type::after {

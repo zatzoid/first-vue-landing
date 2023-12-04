@@ -2,7 +2,7 @@
     <li :class="{ 'itemNews': true, 'itemNews_shorted': shorted }">
         <img :src="image" alt="asd">
         <div :class="{ 'itemNews__content': true, 'itemNews__content_shorted': shorted }">
-            <router-link :to="`/news/post${item.newsIndex}`" class="itemNews__heading"> <p class="itemNews__heading-txt">{{ item.heading }}</p></router-link>
+            <router-link :to="`/news/post/${item.newsIndex}`" class="itemNews__heading"> <p class="itemNews__heading-txt">{{ item.heading }}</p></router-link>
             <div class="itemNews__info">
                 <p class="itemNews__info-data">{{ item.type }}</p>
                 <p class="itemNews__info-data">{{ item.date }}</p>

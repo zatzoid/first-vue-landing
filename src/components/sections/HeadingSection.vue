@@ -2,7 +2,8 @@
     <section>
         <div class="heading-container">
             <nav>
-                <router-link v-for="(item, index) in currentPath" :key="index" class="heading__nav-link link-style" :to="`/${item}`">{{ item !== '' ? item : 'homepage' }}</router-link>
+                <router-link v-for="(item, index) in currentPath" :key="index" class="heading__nav-link link-style"
+                    :to="`/${item}`">{{ item !== '' ? item : 'homepage' }}</router-link>
             </nav>
             <h2>{{ headingTxt }}</h2>
             <p>{{ contentTxt }}</p>
@@ -15,11 +16,9 @@
 <script>
 export default {
     name: 'HeadingSection',
-    data(){
-return{
-    currentPath: window.location.pathname.split('/'),
+    computed: {
+        currentPath() { return window.location.pathname.split('/') }
 
-}
     },
     props: ['headingTxt', 'contentTxt']
 }
@@ -44,17 +43,23 @@ section {
 nav {
     margin: 100px 0 40px;
 }
-.heading__nav-link::after{
+
+.heading__nav-link::after {
     content: ' / ';
 }
 
-.heading__nav-link:last-of-type{
+.heading__nav-link:last-of-type {
     opacity: 0.3;
+    pointer-events: none;
+    cursor: default;
+
 }
-.heading__nav-link:last-of-type::after{
+
+.heading__nav-link:last-of-type::after {
     content: '';
-    
+
 }
+
 h2 {
     margin: 0 0 24px;
     font-size: 72px;

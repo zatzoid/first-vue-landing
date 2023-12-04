@@ -18,9 +18,17 @@ import BenefitsServices from './servicesElementPage/BenefitsServices.vue';
 import ElementDescription from './servicesElementPage/ElementDescription.vue';
 import HowWeDo from './servicesElementPage/HowWeDo.vue';
 import PricingServices from './servicesElementPage/PricingServices.vue';
+import { servicesList } from '@/utils/constans/servicesList';
 //  scroll-behavior: smooth;
 export default {
     name: "ServicesElementPage",
+    props: ['itemName'],
+    computed: {
+        item() {
+            return  servicesList.find(el => el.link === this.itemName);
+        }
+    },
+
    
     mounted(){
         window.scrollTo({
@@ -29,7 +37,6 @@ export default {
       behavior: 'smooth'
     });
     },
-    props: ['item'],
     components: { HeadingSection, ElementDescription, HowWeDo, BenefitsServices, SliderItemsSection, PricingServices, SupportedSection }
 }
 </script>
