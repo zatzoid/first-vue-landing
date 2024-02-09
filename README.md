@@ -1,5 +1,5 @@
-
 # first-vue-landing
+spa на vue3
 гитха пейдж - https://zatzoid.github.io/first-vue-landing/
 
 
